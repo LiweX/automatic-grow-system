@@ -30,13 +30,13 @@ void WIFI_init(){
   Serial.begin(9600);		// inicializa monitor serie a 9600 bps
   ESP01.begin(9600);		// inicializa ESP01 a 9600 bps
   ESP01.println("AT+CWMODE=1");		// establece modo cliente (station)
-  delay(200);
-  //ESP01.println("AT+CWJAP=\"306-2.4\",\"ComplejosConjugados\"");		// unirse a la red local
-  //delay(2000);
+  delay(1000);
+  ESP01.println("AT+CWJAP=\"306-2.4\",\"ComplejosConjugados\"");		// unirse a la red local
+  delay(5000);
   ESP01.println("AT+CIPMUX=1");		// establece multiples conexiones en simultaneo
-  delay(200);
+  delay(1000);
   ESP01.println("AT+CIPSERVER=1,80");	// inicia servidor web en puerto 80
-  delay(200);
+  delay(1000);
   
 }
 
